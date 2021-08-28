@@ -53,12 +53,7 @@ export default function Show(props) {
 		}
 	};
 	return (
-		<div
-			className="ShowPage"
-			style={{
-				background: 'url(./public/img/mandala_1.png)'
-			}}
-		>
+		<div className="ShowPage">
 			{Object.keys(note).length ? (
 				<>
 					<h3>{note.title}</h3>
@@ -89,7 +84,6 @@ export default function Show(props) {
 					/>
 				</label>
 				<br />
-
 				<label className="input-group-text" id="inputGroup-sizing-default">
 					{' '}
 					Note:{' '}
