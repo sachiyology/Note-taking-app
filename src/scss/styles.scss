@@ -1,12 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
+@import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap');
 @import "reset";
 @import "grid";
 
-*{
-  }
+@font-face{
+  font-family: 'myfont';
+  src: url("/img/EagleLake-Regular.ttf") !important;
+}
+
+* {
+  font-family: 'myfont' !important;
+  font-family: 'Eagle Lake', cursive !important;
+}
 
 body {
   font-size: 16px;
+  color: grey !important;
+  background-image:url("/img/mandala_1.png") !important;
+  background-size: 100%;
+  background-repeat: no-repeat;
   }
 
 .NavBar {
@@ -15,6 +27,8 @@ body {
   width: 100%;
   background-color: #f0f0f0;
   background-color: black;
+  color:  grey;
+
 
 
   a{
@@ -22,6 +36,8 @@ body {
     margin-bottom: 30px;
     margin-right: 20px;
     margin-left: 20px;
+    color: grey;
+    font-size: 20px;
   }
 
 }
@@ -35,17 +51,12 @@ body {
 }
 
 .HomePage {
-  font-size: 20px;
-  margin-top: 30px;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 20px;
+  margin-top: 18%;
+  margin-right: 20px;
+  color: grey;
   text-align: center;
-
-
-}
-}
-
-}
+  font-family: 'myfont' !important;
 }
 
 .AboutPage {
@@ -77,14 +88,32 @@ body {
       width: 200px;
     }
   }
+}
 
 .NewPage{
-  text-align: center;
-  font-size:24px;
+  font-size:12px;
 margin-left: 20px;
-margin-top: 5px;
+margin-top: 18%;
 margin-right: 20px;
 color: grey;
+text-align: center;
+font-family: 'myfont' !important;
+
+#title{
+  background-color:transparent;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  border-color: gold;
+  color: grey;
 }
+.form-control{
+  background-color:transparent;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  border-color: gold;
+}
+
 
 }

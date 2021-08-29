@@ -22,7 +22,7 @@ const routes = [
 	},
 	{
 		Component: Home,
-		key: 'Home',
+		key: 'Login',
 		path: '/register'
 	} /**/
 	/* {

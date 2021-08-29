@@ -60,44 +60,41 @@ export default function App(props) {
 	};
 	return (
 		<div className="NewPage">
-			New note
+			{' '}
 			<form onSubmit={handleSubmit}>
-				<div className="input-group mb-3">
-					<div className="input-group-prepend">
-						<span className="input-group-text" id="inputGroup-sizing-default">
-							Title
-						</span>
+				<div className="form-group">
+					<div>
+						<span></span>
 					</div>
 					<input
 						type="text"
 						id="title"
 						value={singleNote.title}
 						onChange={handleChange}
+						placeholder="Title"
 						className="form-control"
-						aria-label="Default"
-						aria-describedby="inputGroup-sizing-default"
+						id="exampleInputEmail1"
 					/>
 				</div>
 
-				<div className="input-group mb-3">
-					<div className="input-group-prepend">
-						<span className="input-group-text">Note</span>
+				<div className="form-group">
+					<div>
+						<span></span>
 					</div>
 					<textarea
 						type="text"
 						id="noteBody"
 						value={singleNote.noteBody}
 						onChange={handleChange}
+						placeholder="Description"
 						className="form-control"
-						aria-label="With textarea"
+						id="exampleFormControlTextarea1"
+						rows="10"
 					></textarea>
 				</div>
 				<br />
-				<input
-					type="submit"
-					value="Add"
-					className="btn btn-secondary btn-lg btn-block"
-				/>
+
+				<input type="submit" value="Save" className="btn btn-secondary" />
 			</form>
 			<ul>
 				{notes.map(note => {

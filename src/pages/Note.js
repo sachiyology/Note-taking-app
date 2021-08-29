@@ -21,7 +21,7 @@ export default function Note(props) {
 		<div className="NotePage" className="list-group">
 			<ul>
 				<div>
-					{token && loggedInUser === 'adminuser'
+					{token && loggedInUser === 'user2'
 						? notes.map(note => {
 								return (
 									<li key={note._id}>
