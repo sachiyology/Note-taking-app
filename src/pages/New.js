@@ -24,8 +24,8 @@ export default function App(props) {
 					'Content-Type': 'application/json'
 				},
 				body: JSON.stringify({
-					name: 'Santos',
-					role: 'Super Awesome Student'
+					name: 'User1',
+					role: 'Super Awesome User'
 				})
 			});
 			const data = await response.json();
@@ -48,8 +48,8 @@ export default function App(props) {
 			const data = await response.json();
 			setNotes([...notes, data]);
 			setNote({
-				name: '',
-				role: ''
+				title: '',
+				noteBody: ''
 			});
 		} catch (error) {
 			console.error(error);
@@ -62,7 +62,7 @@ export default function App(props) {
 		<div className="NewPage">
 			{' '}
 			<form onSubmit={handleSubmit}>
-				<div className="form-group">
+				<div>
 					<div>
 						<span></span>
 					</div>
@@ -71,13 +71,14 @@ export default function App(props) {
 						id="title"
 						value={singleNote.title}
 						onChange={handleChange}
-						placeholder="Title"
 						className="form-control"
-						id="exampleInputEmail1"
+						aria-label="Default"
+						aria-describedby="inputGroup-sizing-default"
+						placeholder="Note title"
 					/>
 				</div>
-
-				<div className="form-group">
+				<br />
+				<div>
 					<div>
 						<span></span>
 					</div>
@@ -86,25 +87,17 @@ export default function App(props) {
 						id="noteBody"
 						value={singleNote.noteBody}
 						onChange={handleChange}
-						placeholder="Description"
 						className="form-control"
-						id="exampleFormControlTextarea1"
-						rows="10"
+						aria-label="Default"
+						aria-describedby="inputGroup-sizing-default"
+						placeholder="Note detail"
+						rows={10}
 					></textarea>
 				</div>
 				<br />
 
-				<input type="submit" value="Save" className="btn btn-secondary" />
+				<input type="submit" value="Save" className="btn btn-primary" />
 			</form>
-			<ul>
-				{notes.map(note => {
-					return (
-						<li key={note._id}>
-							{note.title} => {note.noteBody}
-						</li>
-					);
-				})}
-			</ul>
 		</div>
 	);
 }

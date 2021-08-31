@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { RiDeleteBin6Line } from 'react-icons/fa';
 
 export default function Show(props) {
 	const [note, setNote] = useState({});
@@ -37,7 +38,6 @@ export default function Show(props) {
 		})();
 	}, []);
 	const handleDelete = async e => {
-		alert(buttonAlert.value1); //追加
 		try {
 			const response = await fetch(`/api/notes/${props.match.params.id}`, {
 				method: 'DELETE',
@@ -58,12 +58,10 @@ export default function Show(props) {
 				<>
 					<h3>{note.title}</h3>
 					<p>{note.noteBody}</p>
-					<button
-						onClick={handleDelete}
-						className="btn btn-secondary btn-lg btn-block"
-					>
+					<p>{note.timestamps}</p>
+					<button onClick={handleDelete} className="btn btn-secondary">
 						Delete
-					</button>
+					</button>{' '}
 				</>
 			) : (
 				<h1> Loading...</h1>
@@ -71,9 +69,9 @@ export default function Show(props) {
 			<form
 				style={{ display: 'flex', flexDirection: 'column' }}
 				onSubmit={handleUpdate}
-				className="input-group-prepend"
+				className="form-group"
 			>
-				<label className="input-group-text" id="inputGroup-sizing-default">
+				<label>
 					{' '}
 					Title:{' '}
 					<input
@@ -81,23 +79,26 @@ export default function Show(props) {
 						ref={titleInput}
 						defaultValue={note.title}
 						className="form-control"
+						id="exampleInputEmail1"
 					/>
 				</label>
 				<br />
-				<label className="input-group-text" id="inputGroup-sizing-default">
+				<label>
 					{' '}
-					Note:{' '}
-					<input
+					Note:
+					<textarea
 						type="text"
 						ref={noteBodyInput}
 						defaultValue={note.noteBody}
 						className="form-control"
-					/>
+						id="exampleFormControlTextarea1"
+						rows="10"
+					></textarea>
 				</label>
 				<input type="submit" value="Update" className="btn btn-primary" />
 			</form>
 			<div className="back-link">
-				<a href="/notes">Back to the List</a>
+				<a href="/notes">Back to the List</a>{' '}
 			</div>
 		</div>
 	);

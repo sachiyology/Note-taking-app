@@ -12,6 +12,10 @@ export default function Home(props) {
 	const handleChange = e => {
 		setUser({ ...user, [e.target.id]: e.target.value });
 	};
+	const handleLogout = async e => {
+		localStorage.clear();
+		window.location.href = '/';
+	};
 	const handleLogin = async e => {
 		e.preventDefault();
 		try {
@@ -59,10 +63,7 @@ export default function Home(props) {
 	}, []);
 
 	return (
-		<div
-			className="HomePage"
-			style={{ background: 'url(../public/img/mandala_1.png)' }}
-		>
+		<div className="HomePage">
 			{!token ? (
 				<>
 					<button
@@ -124,6 +125,18 @@ export default function Home(props) {
 			) : (
 				<>
 					<div>Hello {loggedInUser},</div>
+					{''}
+					<br />
+					{''}
+					<div>
+						<button
+							href="#"
+							onClick={handleLogout}
+							className="btn btn-secondary"
+						>
+							Logout
+						</button>
+					</div>
 				</>
 			)}
 		</div>

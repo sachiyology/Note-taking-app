@@ -12,7 +12,7 @@ const routes = [
 	}, */
 	{
 		Component: Note,
-		key: 'Note',
+		key: 'Notes',
 		path: '/notes'
 	},
 	{
@@ -23,7 +23,7 @@ const routes = [
 	{
 		Component: Home,
 		key: 'Login',
-		path: '/register'
+		path: '/login'
 	} /**/
 	/* {
 	Component: About,
